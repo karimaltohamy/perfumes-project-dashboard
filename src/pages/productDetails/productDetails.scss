@@ -1,0 +1,136 @@
+$main-color: #7367f0;
+
+// start product_details
+.product_details {
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 7px;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(47, 43, 61, 0.14), 0 0 transparent, 0 0 transparent;
+
+  .image {
+    margin-bottom: 20px;
+
+    img {
+      width: 380px;
+      height: 300px;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 15px;
+    }
+  }
+
+  .title {
+    font-size: 28px;
+    font-weight: 600;
+    color: black;
+  }
+
+  .items {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+
+    .item {
+      padding: 8px 12px;
+      border-radius: 7px;
+      background-color: #f4f5f9;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      .icon {
+        svg {
+          color: $main-color;
+          font-size: 28px;
+        }
+      }
+
+      .text {
+        span {
+          font-size: 15px;
+        }
+
+        h5 {
+          font-size: 19px;
+          font-weight: 500;
+          color: black;
+        }
+      }
+    }
+  }
+
+  .description {
+    margin-top: 30px;
+
+    h4 {
+      font-size: 22px;
+      font-weight: 600;
+      color: black;
+    }
+
+    p {
+      line-height: 1.8;
+      max-width: 800px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .product_details {
+    padding: 10px;
+    .image {
+      margin-bottom: 5px;
+      img {
+        width: 200px;
+        height: 170px;
+      }
+    }
+
+    .title {
+      font-size: 23px;
+    }
+
+    .items {
+      margin-top: 15px;
+      gap: 10px;
+
+      .item {
+        padding: 8px;
+        gap: 5px;
+
+        .icon {
+          svg {
+            width: 26px;
+          }
+        }
+
+        .text {
+          span {
+            font-size: 12px;
+          }
+
+          h5 {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+    .description {
+      margin-top: 15px;
+
+      h4 {
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 13px;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+// end product_details

@@ -1,0 +1,125 @@
+@use "../../sass/index" as *;
+
+// start navbar
+.navbar {
+  padding: 8px 18px;
+  border-radius: 7px;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(47, 43, 61, 0.14), 0 0 transparent, 0 0 transparent;
+  margin-bottom: 25px;
+
+  .container_navbar {
+    @include flex(center, space-between);
+
+    .search {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgb(210, 210, 210);
+      padding: 5px;
+      border-radius: 6px;
+
+      svg {
+        width: 20px;
+      }
+
+      input {
+        border: none;
+        outline: none;
+      }
+    }
+
+    .info {
+      @include flex(center, unset);
+      gap: 8px;
+
+      .lang,
+      .darkmode {
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        @include flex(center, center);
+        transition: all 0.2s ease;
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgb(233, 233, 233);
+        }
+
+        svg {
+          width: 23px;
+        }
+      }
+
+      .profile {
+        position: relative;
+        img {
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          object-fit: cover;
+          cursor: pointer;
+        }
+
+        .list {
+          position: absolute;
+          top: 50px;
+          right: 0;
+          width: 250px;
+          background-color: white;
+          padding: 15px;
+          border-radius: 10px;
+          box-shadow: 0 2px 6px rgba(47, 43, 61, 0.14), 0 0 transparent,
+            0 0 transparent;
+          z-index: 10;
+          transition: all 0.4s;
+          opacity: 0;
+          transform: translateY(20px);
+
+          &.active {
+            opacity: 1;
+            transform: translateY(-0);
+            z-index: 9999;
+          }
+
+          .porfile_list {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+
+            img {
+              width: 55px;
+              height: 55px;
+              object-fit: cover;
+            }
+
+            .text {
+              h4 {
+                font-size: 15px;
+              }
+
+              span {
+                font-size: 14px;
+                color: rgb(161, 161, 161);
+              }
+            }
+          }
+
+          .btn_logout {
+            padding: 5px;
+            width: 100%;
+            border: 2px solid $main-color;
+            color: $main-color;
+            background-color: transparent;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+// end navbar

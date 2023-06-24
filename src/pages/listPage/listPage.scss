@@ -1,0 +1,90 @@
+$main-color: #7367f0;
+
+// start list
+.table_container {
+  padding: 15px 18px;
+  border-radius: 7px;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(47, 43, 61, 0.14), 0 0 transparent, 0 0 transparent;
+  position: relative;
+  z-index: 999;
+
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    .title_list {
+      font-size: 22px;
+      font-weight: 500;
+    }
+
+    .btn_add {
+      padding: 6px 12px;
+      border: 1px solid rgb(3, 203, 3) !important;
+      border-radius: 5px;
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      color: rgb(3, 203, 3) !important;
+    }
+  }
+
+  .MuiDataGrid-root {
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      span {
+        font-weight: 600;
+      }
+    }
+
+    .cellActions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      position: relative;
+
+      .btn_view,
+      .btn_delete,
+      .btn_edite {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+          width: 17px;
+        }
+      }
+
+      .btn_view {
+        background-color: #c8c4f5;
+        color: #7367f0 !important;
+      }
+
+      .btn_edite {
+        background-color: #fabbb3;
+        color: #fe634e !important;
+      }
+
+      .btn_delete {
+        background-color: #f9c1c1;
+        color: #ff2221;
+      }
+    }
+  }
+}
+// end list

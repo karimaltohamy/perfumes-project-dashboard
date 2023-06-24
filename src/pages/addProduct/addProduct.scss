@@ -1,0 +1,86 @@
+@use "../../sass/index" as *;
+
+// start form_new_user
+.form_new {
+  padding: 15px 18px;
+  border-radius: 7px;
+  background-color: white;
+  box-shadow: 0 2px 6px rgba(47, 43, 61, 0.14), 0 0 transparent, 0 0 transparent;
+  max-width: 700px;
+  margin: auto;
+
+  form {
+    .image {
+      margin-bottom: 10px;
+      text-align: center;
+
+      img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin: auto;
+      }
+    }
+
+    .inputs {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+
+      .input_file {
+        width: 100%;
+
+        label {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          font-weight: 500;
+          cursor: pointer;
+        }
+
+        input {
+          display: none;
+        }
+      }
+
+      .input_item {
+        width: 48%;
+
+        label {
+          display: block;
+          font-weight: 600;
+          color: #727d8f;
+          margin-bottom: 3px;
+          font-size: 15px;
+        }
+
+        input,
+        select {
+          padding: 8px;
+          border: 1px solid #b1b7bd;
+          border-radius: 4px;
+          width: 100%;
+
+          &::placeholder {
+            color: #acb6c6;
+            font-size: 13px;
+          }
+        }
+      }
+    }
+
+    .btn_submit {
+      padding: 12px 40px;
+      border: none;
+      background-color: $main-color;
+      color: white;
+      font-weight: 600;
+      margin-top: 30px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
+}
+// end form_new_user
