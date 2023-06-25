@@ -42,3 +42,11 @@ export const productInputs = [
     placeholder: "",
   },
 ];
+
+export const userInputs = [
+  { id: "username", label: "Username", type: "text" },
+  { id: "email", label: "Email", type: "email" },
+  { id: "country", label: "Counrty", type: "text" },
+  { id: "city", label: "City", type: "text" },
+  { id: "phone", label: "Phone", type: "text" },
+];

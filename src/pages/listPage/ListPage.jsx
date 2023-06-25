@@ -46,8 +46,13 @@ const ListPage = ({ typePage, columns }) => {
   const loading = false;
 
   const handleDelete = (id) => {
-    const d = productsData.filter((item) => item.id !== id);
-    setData(d);
+    if (typePage === "products") {
+      const d = productsData.filter((item) => item.id !== id);
+      setData(d);
+    } else {
+      const d = usersData.filter((item) => item.id !== id);
+      setData(d);
+    }
   };
 
   useEffect(() => {

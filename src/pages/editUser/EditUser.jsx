@@ -1,26 +1,25 @@
 import React, { useContext, useEffect, useState } from "react";
+import { SidebarContext } from "../../context/sidebarContext";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
-import { productInputs } from "../../formSource";
-import ImageIcon from "@mui/icons-material/Image";
 import { useNavigate, useParams } from "react-router-dom";
+import { userInputs } from "../../formSource";
+import ImageIcon from "@mui/icons-material/Image";
+import { usersData } from "../../data";
 
-import { SidebarContext } from "../../context/sidebarContext";
-import { productsData } from "../../data";
-
-const EditProduct = () => {
+const EditUser = () => {
   const { closeSidbar } = useContext(SidebarContext);
   const [files, setFiles] = useState();
   const [info, setInfo] = useState({});
-  const navigate = useNavigate();
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setInfo({ ...info, [e.target.id]: e.target.value });
   };
 
   useEffect(() => {
-    const singleData = productsData.find((item) => item.id === Number(id));
+    const singleData = usersData.find((item) => item.id === Number(id));
     setInfo(singleData);
   }, []);
 
@@ -53,8 +52,8 @@ const EditProduct = () => {
                   onChange={(e) => setFiles(e.target.files)}
                 />
               </div>
-              {productInputs
-                ? productInputs.map((input, index) => {
+              {userInputs
+                ? userInputs.map((input, index) => {
                     return (
                       <div className="input_item" key={index}>
                         <label htmlFor="username">{input.label}</label>
@@ -78,4 +77,4 @@ const EditProduct = () => {
   );
 };
 
-export default EditProduct;
+export default EditUser;

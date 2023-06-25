@@ -1,29 +1,22 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
+import "./addUser.scss";
+import { SidebarContext } from "../../context/sidebarContext";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Navbar from "../../components/navbar/Navbar";
-import { productInputs } from "../../formSource";
+import { useNavigate } from "react-router-dom";
+import { userInputs } from "../../formSource";
 import ImageIcon from "@mui/icons-material/Image";
-import { useNavigate, useParams } from "react-router-dom";
 
-import { SidebarContext } from "../../context/sidebarContext";
-import { productsData } from "../../data";
-
-const EditProduct = () => {
+const AddUser = () => {
   const { closeSidbar } = useContext(SidebarContext);
   const [files, setFiles] = useState();
   const [info, setInfo] = useState({});
   const navigate = useNavigate();
-  const { id } = useParams();
 
   const handleChange = (e) => {
     setInfo({ ...info, [e.target.id]: e.target.value });
+    console.log(info);
   };
-
-  useEffect(() => {
-    const singleData = productsData.find((item) => item.id === Number(id));
-    setInfo(singleData);
-  }, []);
-
   return (
     <main>
       <Sidebar />
@@ -53,8 +46,8 @@ const EditProduct = () => {
                   onChange={(e) => setFiles(e.target.files)}
                 />
               </div>
-              {productInputs
-                ? productInputs.map((input, index) => {
+              {userInputs
+                ? userInputs.map((input, index) => {
                     return (
                       <div className="input_item" key={index}>
                         <label htmlFor="username">{input.label}</label>
@@ -63,7 +56,6 @@ const EditProduct = () => {
                           placeholder={input.placeholder}
                           id={input.id}
                           onChange={(e) => handleChange(e)}
-                          value={info[input.id]}
                         />
                       </div>
                     );
@@ -78,4 +70,4 @@ const EditProduct = () => {
   );
 };
 
-export default EditProduct;
+export default AddUser;
