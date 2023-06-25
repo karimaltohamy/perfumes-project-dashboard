@@ -6,10 +6,13 @@ import UsersPage from "./pages/usersPage/UsersPage";
 import AddProduct from "./pages/addProduct/AddProduct";
 import EditProduct from "./pages/editProduct/EditProduct";
 import ProductDetails from "./pages/productDetails/ProductDetails";
-import { productsColumns, userColumns } from "./dataTable";
+import { ordersColumns, productsColumns, userColumns } from "./dataTable";
 import AddUser from "./pages/addUser/AddUser";
 import EditUser from "./pages/editUser/EditUser";
 import Login from "./pages/login/Login";
+import AddOrder from "./pages/addOrder/AddOrder";
+import EditOrder from "./pages/editOrder/EditOrder";
+import OrderDetails from "./pages/orderDetails/OrderDetails";
 
 function App() {
   return (
@@ -29,6 +32,13 @@ function App() {
       <Route path="/users/new" element={<AddUser />} />
       <Route path="/users/edit/:id" element={<EditUser />} />
       <Route path="/login" element={<Login />} />
+      <Route
+        path="/orders"
+        element={<ListPage typePage={"orders"} columns={ordersColumns} />}
+      />
+      <Route path="/orders/new" element={<AddOrder />} />
+      <Route path="/orders/edit/:id" element={<EditOrder />} />
+      <Route path="/orders/productDetails/:id" element={<OrderDetails />} />
     </Routes>
   );
 }

@@ -50,3 +50,17 @@ export const userInputs = [
   { id: "city", label: "City", type: "text" },
   { id: "phone", label: "Phone", type: "text" },
 ];
+
+export const ordersInputs = [
+  { id: "name", label: "Name", type: "text" },
+  { id: "title", label: "Title", type: "text" },
+  { id: "price", label: "Price", type: "text" },
+  { id: "address", label: "Address", type: "text" },
+  { id: "type", label: "Type", type: "text" },
+  { id: "desc", label: "Description", type: "text" },
+  { id: "city", label: "City", type: "text" },
+  { id: "governorate", label: "Governorate", type: "text" },
+  { id: "rating", label: "Rating", type: "text" },
+  { id: "fragrance", label: "Fragrance", type: "text" },
+  { id: "yearIntroduced", label: "Year Introduced", type: "text" },
+];

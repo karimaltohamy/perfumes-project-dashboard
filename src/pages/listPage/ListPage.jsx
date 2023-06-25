@@ -5,7 +5,7 @@ import Navbar from "../../components/navbar/Navbar";
 import { SidebarContext } from "../../context/sidebarContext";
 import { Link } from "react-router-dom";
 import { Box } from "@mui/material";
-import { productsData, usersData } from "../../data";
+import { ordersData, productsData, usersData } from "../../data";
 import { DataGrid } from "@mui/x-data-grid";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import EditIcon from "@mui/icons-material/Edit";
@@ -23,7 +23,7 @@ const ListPage = ({ typePage, columns }) => {
         <div className="cellActions">
           <Link
             className="btn_view"
-            to={`/products/productDetails/${params.row.id}`}
+            to={`/${typePage}/productDetails/${params.row.id}`}
           >
             <RemoveRedEyeIcon />
           </Link>
@@ -49,6 +49,9 @@ const ListPage = ({ typePage, columns }) => {
     if (typePage === "products") {
       const d = productsData.filter((item) => item.id !== id);
       setData(d);
+    } else if (typePage === "orders") {
+      const d = ordersData.filter((item) => item.id !== id);
+      setData(d);
     } else {
       const d = usersData.filter((item) => item.id !== id);
       setData(d);
@@ -58,6 +61,8 @@ const ListPage = ({ typePage, columns }) => {
   useEffect(() => {
     if (typePage === "products") {
       setData(productsData);
+    } else if (typePage === "orders") {
+      setData(ordersData);
     } else {
       setData(usersData);
     }

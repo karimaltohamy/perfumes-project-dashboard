@@ -2,6 +2,7 @@ import "./sidebar.scss";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import DeliveryDiningIcon from "@mui/icons-material/DeliveryDining";
 import { useContext } from "react";
 
 import { NavLink } from "react-router-dom";
@@ -76,6 +77,13 @@ const Sidebar = () => {
           >
             <ShoppingCartIcon />
             {!closeSidbar && <span>Products</span>}
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => (isActive ? "link active" : "link")}
+            to="/orders"
+          >
+            <DeliveryDiningIcon />
+            {!closeSidbar && <span>Orders</span>}
           </NavLink>
         </div>
       </div>

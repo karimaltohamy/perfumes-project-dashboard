@@ -2,7 +2,6 @@ $main-color: #7367f0;
 
 // start product_details
 .product_details {
-  margin-top: 40px;
   padding: 20px;
   border-radius: 7px;
   background-color: white;
@@ -30,7 +29,7 @@ $main-color: #7367f0;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 15px;
     margin-top: 30px;
 
     .item {

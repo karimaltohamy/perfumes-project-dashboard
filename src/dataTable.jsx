@@ -49,3 +49,13 @@ export const userColumns = [
     width: 100,
   },
 ];
+
+export const ordersColumns = [
+  { field: "id", headerName: "ID", width: 70 },
+  { field: "name", headerName: "Name", width: 90 },
+  { field: "title", headerName: "Title", width: 130 },
+  { field: "price", headerName: "Price", width: 90 },
+  { field: "address", headerName: "Address", width: 100 },
+  { field: "type", headerName: "Type", width: 90 },
+  { field: "desc", headerName: "Description", width: 250 },
+];

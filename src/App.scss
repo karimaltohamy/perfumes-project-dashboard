@@ -55,6 +55,10 @@ main {
 
 @media (max-width: 768px) {
   main {
+    position: relative;
+    overflow: auto;
+    height: 100vh;
+
     .container_conetnt {
       width: calc(100% - 75px);
     }
